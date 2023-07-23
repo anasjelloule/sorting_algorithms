@@ -1,7 +1,7 @@
 /*
- * File: 0-bubble_sort.c
- * Auth: Anas Jelloul
- */
+* File: 0-bubble_sort.c
+* Auth: Anas Jelloul
+*/
 
 #include "sort.h"
 
@@ -12,11 +12,11 @@
  */
 void swtch_ints(int *a, int *b)
 {
-  int _temp;
+int _temp;
 
-  _temp = *a;
-  *a = *b;
-  *b = _temp;
+_temp = *a;
+*a = *b;
+*b = _temp;
 }
 
 /**
@@ -28,24 +28,24 @@ void swtch_ints(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
-  size_t cnt, _len = size;
-  bool bbly = false;
+size_t cnt, _len = size;
+bool bbly = false;
 
-  if (array == NULL || size < 2)
-    return;
+if (array == NULL || size < 2)
+return;
 
-  while (bbly == false)
-    {
-      bbly = true;
-      for (cnt = 0; cnt < _len - 1; cnt++)
-	{
-	  if (array[cnt] > array[cnt + 1])
-	    {
-	      swtch_ints(array + cnt, array + cnt + 1);
-	      print_array(array, size);
-	      bbly = false;
-	    }
-	}
-      _len--;
-    }
+while (bbly == false)
+{
+bbly = true;
+for (cnt = 0; cnt < _len - 1; cnt++)
+{
+if (array[cnt] > array[cnt + 1])
+{
+swtch_ints(array + cnt, array + cnt + 1);
+print_array(array, size);
+bbly = false;
+}
+}
+_len--;
+}
 }

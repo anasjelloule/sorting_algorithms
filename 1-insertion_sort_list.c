@@ -1,7 +1,7 @@
 /*
-* File: 1-insertion_sort_list.c
-* Auth: Anas Jelloul
-*/
+ * File: 1-insertion_sort_list.c
+ * Auth: Anas Jelloul
+ */
 
 #include "sort.h"
 
@@ -13,17 +13,17 @@
  */
 void switch_nds(listint_t **lst, listint_t **nd1, listint_t *nd2)
 {
-(*nd1)->next = nd2->next;
-if (nd2->next != NULL)
-nd2->next->prev = *nd1;
-nd2->prev = (*nd1)->prev;
-nd2->next = *nd1;
-if ((*nd1)->prev != NULL)
-(*nd1)->prev->next = nd2;
-else
-*lst = nd2;
-(*nd1)->prev = nd2;
-*nd1 = nd2->prev;
+	(*nd1)->next = nd2->next;
+	if (nd2->next != NULL)
+		nd2->next->prev = *nd1;
+	nd2->prev = (*nd1)->prev;
+	nd2->next = *nd1;
+	if ((*nd1)->prev != NULL)
+		(*nd1)->prev->next = nd2;
+	else
+		*lst = nd2;
+	(*nd1)->prev = nd2;
+	*nd1 = nd2->prev;
 }
 
 /**
@@ -35,19 +35,19 @@ else
  */
 void insertion_sort_list(listint_t **list)
 {
-listint_t *iterator, *insrt, *temp_;
+	listint_t *iterator, *insrt, *temp_;
 
-if (list == NULL || *list == NULL || (*list)->next == NULL)
-return;
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
+		return;
 
-for (iterator = (*list)->next; iterator != NULL; iterator = temp_)
-{
-temp_ = iterator->next;
-insrt = iterator->prev;
-while (insrt != NULL && iterator->n < insrt->n)
-{
-switch_nds(list, &insrt, iterator);
-print_list((const listint_t *)*list);
-}
-}
+	for (iterator = (*list)->next; iterator != NULL; iterator = temp_)
+	{
+		temp_ = iterator->next;
+		insrt = iterator->prev;
+		while (insrt != NULL && iterator->n < insrt->n)
+		{
+			switch_nds(list, &insrt, iterator);
+			print_list((const listint_t *)*list);
+		}
+	}
 }

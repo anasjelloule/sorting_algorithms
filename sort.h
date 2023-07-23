@@ -17,11 +17,13 @@ const int n;
 struct listint_s *prev;
 struct listint_s *next;
 } listint_t;
-
+void swtch_ints(int *a, int *b);
 void insertion_sort_list(listint_t **list);
+void selection_sort(int *array, size_t size);
+
 void bubble_sort(int *array, size_t size);
 void switch_nds(listint_t **lst, listint_t **nd1, listint_t *nd2);
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
-
+void selection_sort(int *array, size_t size);
 #endif

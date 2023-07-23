@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include "sort.h"
+
+/**
+ * print_list - Prints a list given
+ *
+ * @list: list to be doing
+ */
+void print_list(const listint_t *list)
+{
+	int cnt;
+
+	cnt = 0;
+	while (list)
+	{
+		if (cnt > 0)
+			printf(", ");
+		printf("%d", list->n);
+		++cnt;
+		list = list->next;
+	}
+	printf("\n");
+}

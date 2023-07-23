@@ -29,21 +29,21 @@ _temp = *a;
 void bubble_sort(int *array, size_t size)
 {
 size_t cnt, _len = size;
-bool bbly = false;
+int bbly = 0;
 
 if (array == NULL || size < 2)
 return;
 
-while (bbly == false)
+while (!bbly)
 {
-bbly = true;
+bbly = 1;
 for (cnt = 0; cnt < _len - 1; cnt++)
 {
 if (array[cnt] > array[cnt + 1])
 {
 swtch_ints(array + cnt, array + cnt + 1);
 print_array(array, size);
-bbly = false;
+bbly = 0;
 }
 }
 _len--;

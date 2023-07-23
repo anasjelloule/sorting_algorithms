@@ -42,7 +42,7 @@ void shell_sort(int *array, size_t size)
 			i = cnt;
 			while (i >= _gp && array[i - _gp] > array[i])
 			{
-				swap_ints(array + i, array + (i - _gp));
+				swtch_ints(array + i, array + (i - _gp));
 				i -= _gp;
 			}
 		}
